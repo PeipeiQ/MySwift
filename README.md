@@ -3,7 +3,7 @@
 >我的个人博客->[http://www.peipeiq.cn](http://www.peipeiq.cn)
 >最近在公司用swift做开发，也开始关注一些swift的语言风格，所以接下来的博客以swift语言为主。oc或者swift有什么问题可以一起交流。
 ## 一、委托模式
-#####1、使用过程
+##### 1、使用过程
 　　协议最常见的用法莫过于进行代理传值，这就是委托模式。常用的应用场景有：controller中自定义了一个view，view中又添加了一个自定义view。在自定义的view中如果有些函数或者属性需要到controller中去调用，委托模式的做法就是规定一个协议，让controller去遵守一个协议并提供实现，那么在自定义view中就能使用协议中的方法。
 　　举个例子，现在想在一个controller中添加一个自定义view，可以实现点击view中按钮更改controller中label的值。简单的代码如下：  
 　　自定义view
@@ -93,7 +93,7 @@ class TestViewController: UIViewController,SelectTabbarDelegate {
 ```
 　　这样就能比较清楚的表明自己的逻辑。否则，如果要在view操作controller的内容，则需要在外部操作controller的实例，这就造成一个问题，就是无法操作实例中的私有属性和私有方法（虽然iOS是一门动态语言，不存在绝对的私有，但是谁会去一直去使用runtime来进行操作呢）。
 　　
-#####2、注意点
+##### 2、注意点
 　　在 ARC 中，对于一般的 delegate，我们会在声明中将其指定为 weak，在这个 delegate 实际的对象被释放的时候，会被重置回 nil。这可以保证即使 delegate 已经不存在时，我们也不会由于访问到已被回收的内存而导致崩溃。ARC 的这个特性杜绝了 Cocoa 开发中一种非常常见的崩溃错误，说是救万千程序员于水火之中也毫不为过。
 　　在 Swift 中我们当然也会希望这么做。但是当我们尝试书写这样的代码的时候，编译器不会让我们通过：
 ```
@@ -104,7 +104,7 @@ class TestViewController: UIViewController,SelectTabbarDelegate {
 1、使用@objc
 2、声明类类型专属协议。通过添加 class 关键字来限制协议只能被类类型遵循，而结构体或枚举不能遵循该协议。class 关键字必须第一个出现在协议的继承列表中，在其他继承的协议之前
 ```protocol SelectTabbarDelegate : class```    
-##二、AOP编程思想的运用
+## 二、AOP编程思想的运用
 
 首先我们理解下AOP的含义。
 >In computing, aspect-oriented programming (AOP) is a programming paradigm that aims to increase modularity by allowing the separation of cross-cutting concerns. It does so by adding additional behavior to existing code (an advice) without modifying the code itself, instead separately specifying which code is modified via a "pointcut" specification, such as "log all function calls when the function's name begins with 'set'". This allows behaviors that are not central to the business logic (such as logging) to be added to a program without cluttering the code, core to the functionality. AOP forms a basis for aspect-oriented software development.
@@ -207,7 +207,7 @@ class SelectTabbar: UIView,StatisticianProtocal {
 以上代码实现了三处统计的逻辑，而不用把统计的逻辑写入controller文件中，降低了功能上的耦合度。
 
 
-##三、用来代替extension，增强代码可读性
+## 三、用来代替extension，增强代码可读性
 　　使用扩展，可以很方便的为一些继承它的子类增添一些函数。这就带来一个问题，就是所有的子类都拥有了这个方法，但是方法的本身可能不明确，或者是只是想让少数子类来使用这个方法。这时候可以使用协议来代替extension。
 ```
 //定义了一个Shakable协议，遵守这个协议的类即可使用里面的方法，并为该方法提供一个默认的实现
@@ -229,7 +229,7 @@ class SelectTabbar: UIView,Shakable
 　　如果不在类中重新实现这个方法，则可以实现默认的方法。这个意思表明，SelectTabbar类的子类是遵守Shakable协议的，间接等于```SelectTabbar():Shakable?```。这样我们就可以愉快的让SelectTabbar对象去使用这个方法。（Self关键字只能用在协议或者类中，表示当前类，可作为返回值使用）。
 　　一旦不想让某个子类使用shakeView()方法，很简单，只要把class SelectTabbar: UIView,Shakable中的Shakable协议干掉即可。
 　　其他实践：  
-　　利用AOP去分离tableview的数据源和事件源的方法，可以单独处理里面的逻辑，使tableview的代理方法不显得那么冗余。
+　　利用AOP去分离tableview的数据源和事件源的方法，可以单独处理里面的逻辑，使tableview的代理方法不显得那么冗余。  
 　　
-##总结
+## 总结
 关于协议，还有很多种用法。以上是目前比较常用的场景。日后开发中如果发现协议在其他地方中有更好的应该，将会更新本文。
