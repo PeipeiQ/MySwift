@@ -20,6 +20,7 @@
 		78EB5A4120BEA3D700081D0B /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EB5A4020BEA3D700081D0B /* TestViewController.swift */; };
 		78EB5A4320BEA3F900081D0B /* SelectTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EB5A4220BEA3F900081D0B /* SelectTabbar.swift */; };
 		78EB5A4520BEB49000081D0B /* const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EB5A4420BEB49000081D0B /* const.swift */; };
+		9699DD8E20F9F2B500896914 /* Statistician.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9699DD8D20F9F2B500896914 /* Statistician.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		78EB5A4020BEA3D700081D0B /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		78EB5A4220BEA3F900081D0B /* SelectTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTabbar.swift; sourceTree = "<group>"; };
 		78EB5A4420BEB49000081D0B /* const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = const.swift; sourceTree = "<group>"; };
+		9699DD8D20F9F2B500896914 /* Statistician.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistician.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +111,9 @@
 		78EB5A0120BE90A700081D0B /* MySwift */ = {
 			isa = PBXGroup;
 			children = (
+				9699DD8C20F9F28B00896914 /* statistician */,
 				78EB5A3B20BEA2CD00081D0B /* components */,
 				78EB5A3620BE9AE300081D0B /* utils */,
-				78EB5A3520BE9AD900081D0B /* views */,
 				78EB5A3420BE9AC700081D0B /* pages */,
 				78EB5A0220BE90A700081D0B /* AppDelegate.swift */,
 				78EB5A0420BE90A700081D0B /* ViewController.swift */,
@@ -151,13 +153,6 @@
 			path = pages;
 			sourceTree = "<group>";
 		};
-		78EB5A3520BE9AD900081D0B /* views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = views;
-			sourceTree = "<group>";
-		};
 		78EB5A3620BE9AE300081D0B /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +168,14 @@
 				78EB5A4220BEA3F900081D0B /* SelectTabbar.swift */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		9699DD8C20F9F28B00896914 /* statistician */ = {
+			isa = PBXGroup;
+			children = (
+				9699DD8D20F9F2B500896914 /* Statistician.swift */,
+			);
+			name = statistician;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +313,7 @@
 				78EB5A3A20BE9C3C00081D0B /* Extension.swift in Sources */,
 				78EB5A0520BE90A700081D0B /* ViewController.swift in Sources */,
 				78EB5A4320BEA3F900081D0B /* SelectTabbar.swift in Sources */,
+				9699DD8E20F9F2B500896914 /* Statistician.swift in Sources */,
 				78EB5A3320BE94E300081D0B /* FriendCircleController.swift in Sources */,
 				78EB5A4520BEB49000081D0B /* const.swift in Sources */,
 				78EB5A0320BE90A700081D0B /* AppDelegate.swift in Sources */,
